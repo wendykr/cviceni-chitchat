@@ -133,6 +133,7 @@
   },
   {
     "id": 11,
+    "channelId": 3,
     "user": {
       "name": "Alex",
       "role": "Marketing Manager",
@@ -144,6 +145,7 @@
   },
   {
     "id": 12,
+    "channelId": 3,
     "user": {
       "name": "Rachel",
       "role": "UX/UI Designer",
