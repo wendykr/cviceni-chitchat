@@ -17,3 +17,15 @@ export interface Message {
   content: string;
   threadMessages: number;
 }
+
+export interface Thread {
+  id: number;
+  parentId: number;
+  user: {
+    name: string;
+    role: string;
+    avatarFilename: string;
+  };
+  time: string;
+  content: string;
+}

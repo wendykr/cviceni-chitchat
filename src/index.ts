@@ -1,8 +1,9 @@
 import './styles.css';
-import { Channel, Message } from './data-model.js';
+import { Channel, Message, Thread } from './data-model.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const channelId = urlParams.get('channel');
+const threadId = urlParams.get('thread');
 
 const response = await fetch('http://localhost:4000/api/channels');
 const data = await response.json();
@@ -89,3 +90,53 @@ const renderMessage = (messages: Message[]): void => {
 };
 
 renderMessage(dataMessage.result);
+
+const responseThread = await fetch(`http://localhost:4000/api/thread-messages?filter=parentId:eq:${threadId}`);
+const dataThread = await responseThread.json();
+
+const renderThread = (threads: Thread[]): void => {
+  const threadsAside: HTMLElement | null = document.querySelector('.thread');
+  const newThreadElm: HTMLDivElement = document.createElement('div');
+  newThreadElm.classList.add('thread-message');
+
+  threads.forEach((thread) => {
+    const newDivElm: HTMLDivElement = document.createElement('div');
+    newDivElm.classList.add('message');
+    newDivElm.classList.add('thread-message');
+
+    const newItem: HTMLImageElement = document.createElement('img');
+    newItem.src = `assets/users/${thread.user.avatarFilename}`;
+    newItem.alt = `${thread.user.name}`;
+    newItem.classList.add('message-avatar');
+
+    const messageContent: HTMLDivElement = document.createElement('div');
+    messageContent.classList.add('message-content');
+
+    const messageHead: HTMLDivElement = document.createElement('div');
+    messageHead.classList.add('message-head');
+
+    const messageUser: HTMLDivElement = document.createElement('div');
+    messageUser.textContent = `${thread.user.name} - ${thread.user.role}`;
+    messageUser.classList.add('message-user');
+
+    const messageTime: HTMLDivElement = document.createElement('div');
+    messageTime.textContent = `${thread.time}`;
+    messageTime.classList.add('message-time');
+
+    const messageText: HTMLDivElement = document.createElement('div');
+    messageText.textContent = `${thread.content}`;
+    messageText.classList.add('message-text');
+
+    newDivElm.appendChild(newItem);
+    newDivElm.appendChild(messageContent);
+    messageContent.appendChild(messageHead);
+    messageHead.appendChild(messageUser);
+    messageHead.appendChild(messageTime);
+    messageContent.appendChild(messageText);
+
+    newThreadElm.appendChild(newDivElm);
+    threadsAside?.appendChild(newThreadElm);
+  })
+};
+
+renderThread(dataThread.result);
