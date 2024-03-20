@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "general",
+    "members": 9,
+    "description": "You can talk about anything work related here that interests everyone."
+  },
+  {
+    "id": 1,
+    "name": "random",
+    "members": 7,
+    "description": "You can chat about anything here mostly work unrelated stuff."
+  },
+  {
+    "id": 2,
+    "name": "development",
+    "members": 5,
+    "description": "For the software development team to discuss technical stuff."
+  },
+  {
+    "id": 3,
+    "name": "marketing",
+    "members": 3,
+    "description": "For the marketing team to discuss marketing related issues."
+  }
+]

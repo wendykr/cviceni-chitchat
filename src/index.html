@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChitChat</title>
+  </head>
+  <body>
+    <aside class="channels">
+      <h2 class="column-head">Channels</h2>
+      <a class="channel active" href="?channel=0">
+        <h3 class="channel-name">#general</h3>
+        <p class="channel-meta">9 members</p>
+      </a>
+      <a class="channel" href="?channel=1">
+        <h3 class="channel-name">#random</h3>
+        <p class="channel-meta">7 members</p>
+      </a>
+      <a class="channel" href="?channel=2">
+        <h3 class="channel-name">#development</h3>
+        <p class="channel-meta">5 members</p>
+      </a>
+      <a class="channel" href="?channel=3">
+        <h3 class="channel-name">#marketing</h3>
+        <p class="channel-meta">3 members</p>
+      </a>
+    </aside>
+    <main class="messages">
+      <h2 class="column-head">Messages</h2>
+      <div class="message">
+        <img class="message-avatar" src="users/adam.png" alt="Adam" />
+        <div class="message-content">
+          <div class="message-head">
+            <div class="message-user">Adam - CEO</div>
+            <div class="message-time">yesterday 7:36</div>
+          </div>
+          <div class="message-text">
+            Hey team! Just a heads up that we're having a quick stand-up meeting at 10 AM today to sync up on our progress and tackle any blockers. See you all there! 🚀
+          </div>
+        </div>
+      </div>
+
+      <div class="message active">
+        <img class="message-avatar" src="users/sarah.png" alt="Sarah" />
+        <div class="message-content">
+          <div class="message-head">
+            <div class="message-user">Sarah - CTO</div>
+            <div class="message-time">today 16:21</div>
+          </div>
+          <div class="message-text">
+            Good morning everyone! We've got some exciting news to share - our latest feature is live! 🎉 Check it out and let us know your thoughts. Big shoutout to the team for their hard work on this one! 💪
+          </div>
+          <a href="?channel=0&message=1" class="message-thread-link">3 messages in thread</a>
+        </div>
+      </div>
+    </main>
+    <aside class="thread">
+      <h2 class="column-head">Thread</h2>
+      <div class="message">
+        <img class="message-avatar" src="users/sarah.png" alt="Sarah" />
+        <div class="message-content">
+          <div class="message-head">
+            <div class="message-user">Sarah - CTO</div>
+            <div class="message-time">today 16:21</div>
+          </div>
+          <div class="message-text">
+            Good morning everyone! We've got some exciting news to share - our latest feature is live! 🎉 Check it out and let us know your thoughts. Big shoutout to the team for their hard work on this one! 💪
+          </div>
+        </div>
+      </div>
+      <div class="thread-messages">
+        <div class="message thread-message">
+          <img class="message-avatar" src="users/adam.png" alt="Sarah" />
+          <div class="message-content">
+            <div class="message-head">
+              <div class="message-user">Adam - CEO</div>
+              <div class="message-time">today 17:08</div>
+            </div>
+            <div class="message-text">
+              That's fantastic news, Sarah! The team really nailed it on this one. I've just tested it out myself, and it's looking great. Well done to everyone involved! 🚀
+            </div>
+          </div>
+        </div>
+
+
+        <div class="message thread-message">
+          <img class="message-avatar" src="users/sarah.png" alt="Sarah" />
+          <div class="message-content">
+            <div class="message-head">
+              <div class="message-user">Sarah - CTO</div>
+              <div class="message-time">today 17:18</div>
+            </div>
+            <div class="message-text">
+              Thanks, Adam! Glad to hear you liked it. It's definitely a team effort, and I'm proud of what we've achieved together. Any thoughts on how we can leverage this feature for our upcoming marketing push?
+            </div>
+          </div>
+        </div>
+
+        <div class="message thread-message">
+          <img class="message-avatar" src="users/adam.png" alt="Sarah" />
+          <div class="message-content">
+            <div class="message-head">
+              <div class="message-user">Adam - CEO</div>
+              <div class="message-time">today 17:22</div>
+            </div>
+            <div class="message-text">
+              Absolutely, Sarah. I think highlighting this feature in our next marketing campaign could really drive engagement. Let's brainstorm some ideas during our next meeting and see how we can maximize its impact. Great job leading the team on this one!
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </body>
+</html>

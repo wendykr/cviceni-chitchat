@@ -1,0 +1,101 @@
+[
+  {
+    "id": 0,
+    "parentId": 0,
+    "user": {
+      "name": "Emily",
+      "role": "Frontend Developer",
+      "avatarFilename": "emily.png"
+    },
+    "time": "yesterday 14:05",
+    "content": "Yes, having more hands on deck would be a huge asset, especially as we're gearing up for the new project launch."
+  },
+  {
+    "id": 1,
+    "parentId": 0,
+    "user": {
+      "name": "David",
+      "role": "Backend Developer",
+      "avatarFilename": "david.png"
+    },
+    "time": "yesterday 14:30",
+    "content": "Agreed. We've been stretched thin lately, and having another backend developer would definitely help us maintain the quality of our work."
+  },
+  {
+    "id": 2,
+    "parentId": 0,
+    "user": {
+      "name": "Rachel",
+      "role": "UX/UI Designer",
+      "avatarFilename": "rachel.png"
+    },
+    "time": "yesterday 15:10",
+    "content": "From a design standpoint, having more developers would allow us to implement more ambitious features and enhancements. I'm all for it!"
+  },
+  {
+    "id": 3,
+    "parentId": 0,
+    "user": {
+      "name": "Michael",
+      "role": "Lead Developer",
+      "avatarFilename": "michael.png"
+    },
+    "time": "yesterday 15:45",
+    "content": "I'll bring this up with the team and see if we can get the ball rolling on this. Thanks for your input, everyone!"
+  },
+  {
+    "id": 4,
+    "parentId": 0,
+    "user": {
+      "name": "Emily",
+      "role": "Frontend Developer",
+      "avatarFilename": "emily.png"
+    },
+    "time": "yesterday 16:00",
+    "content": "Thanks, Michael. We appreciate it!"
+  },
+  {
+    "id": 5,
+    "parentId": 1,
+    "user": {
+      "name": "Michael",
+      "role": "Lead Developer",
+      "avatarFilename": "michael.png"
+    },
+    "time": "yesterday 14:05",
+    "content": "Adam, while I agree with the need to update task statuses, I think it's equally important to address the concerns you raised earlier about expanding the team. Hiring a new backend developer might affect our current workload and project timelines. Perhaps we should discuss this further?"
+  },
+  {
+    "id": 6,
+    "parentId": 1,
+    "user": {
+      "name": "Emily",
+      "role": "Frontend Developer",
+      "avatarFilename": "emily.png"
+    },
+    "time": "yesterday 14:30",
+    "content": "I agree with Michael. Adding new team members can disrupt our workflow, especially if we're not fully prepared to onboard them. Maybe we should focus on optimizing our current processes before rushing into hiring?"
+  },
+  {
+    "id": 7,
+    "parentId": 1,
+    "user": {
+      "name": "Sarah",
+      "role": "CTO",
+      "avatarFilename": "sarah.png"
+    },
+    "time": "yesterday 15:15",
+    "content": "I understand the concerns, but we've been facing bottlenecks in our development pipeline lately. Hiring a new backend developer could help alleviate some of that pressure. Let's explore both sides and come to a consensus."
+  },
+  {
+    "id": 8,
+    "parentId": 1,
+    "user": {
+      "name": "David",
+      "role": "Backend Developer",
+      "avatarFilename": "david.png"
+    },
+    "time": "yesterday 16:00",
+    "content": "As a backend developer, I can say we're stretched thin with the current workload. While onboarding a new team member might have some short-term challenges, in the long run, it could boost our productivity and efficiency."
+  }
+]

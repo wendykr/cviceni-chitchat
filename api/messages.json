@@ -1,0 +1,156 @@
+[
+  {
+    "id": 0,
+    "channelId": 0,
+    "user": {
+      "name": "Adam",
+      "role": "CEO",
+      "avatarFilename": "adam.png"
+    },
+    "time": "yesterday 13:21",
+    "content": "Hey guys, I've been thinking about our company's future and I think we should start looking for new talent. We need to expand our team and I think we should start by hiring a second backend developer. What do you think?",
+    "threadMessages": 5
+  },
+  {
+    "id": 1,
+    "channelId": 0,
+    "user": {
+      "name": "Adam",
+      "role": "CEO",
+      "avatarFilename": "adam.png"
+    },
+    "time": "yesterday 13:21",
+    "content": "Hey everyone, just a reminder to update your task statuses in our project management tool by end of day today. Let's ensure we're all on the same page with progress.",
+    "threadMessages": 4
+  },
+  {
+    "id": 2,
+    "channelId": 0,
+    "user": {
+      "name": "Emily",
+      "role": "Frontend Developer",
+      "avatarFilename": "emily.png"
+    },
+    "time": "yesterday 14:45",
+    "content": "Could someone help me debug an issue with the responsive design on the homepage? It's not displaying correctly on mobile devices.",
+    "threadMessages": 0
+  },
+  {
+    "id": 3,
+    "channelId": 0,
+    "user": {
+      "name": "Rachel",
+      "role": "UX/UI Designer",
+      "avatarFilename": "rachel.png"
+    },
+    "time": "today 09:30",
+    "content": "I've just uploaded the latest version of the wireframes for review. Please take a look and provide any feedback or suggestions.",
+    "threadMessages": 0
+  },
+  {
+    "id": 4,
+    "channelId": 0,
+    "user": {
+      "name": "Jason",
+      "role": "Sales Manager",
+      "avatarFilename": "jason.png"
+    },
+    "time": "today 11:15",
+    "content": "Does anyone have an update on the expected delivery date for the new feature? I need to communicate this to a potential client.",
+    "threadMessages": 0
+  },
+  {
+    "id": 5,
+    "channelId": 0,
+    "user": {
+      "name": "Lauren",
+      "role": "Customer Success Specialist",
+      "avatarFilename": "lauren.png"
+    },
+    "time": "today 12:00",
+    "content": "Just a heads up, we've received a few inquiries from customers regarding the onboarding process. If anyone has suggestions on improving it, feel free to share.",
+    "threadMessages": 0
+  },
+  {
+    "id": 6,
+    "channelId": 1,
+    "user": {
+      "name": "Lauren",
+      "role": "Customer Success Specialist",
+      "avatarFilename": "lauren.png"
+    },
+    "time": "yesterday 17:45",
+    "content": "Who else thinks we should have a 'Bring Your Pet to Work Day'? I could definitely use some furry company around here!",
+    "threadMessages": 0
+  },
+  {
+    "id": 7,
+    "channelId": 1,
+    "user": {
+      "name": "Alex",
+      "role": "Marketing Manager",
+      "avatarFilename": "alex.png"
+    },
+    "time": "today 09:30",
+    "content": "I second that, Lauren! My cat would love to provide some 'purr-fect' marketing insights!",
+    "threadMessages": 0
+  },
+  {
+    "id": 8,
+    "channelId": 2,
+    "user": {
+      "name": "Emily",
+      "role": "Frontend Developer",
+      "avatarFilename": "emily.png"
+    },
+    "time": "yesterday 14:20",
+    "content": "Guys, have you seen this hilarious coding meme? It perfectly sums up our debugging sessions! 😂",
+    "threadMessages": 0
+  },
+  {
+    "id": 9,
+    "channelId": 2,
+    "user": {
+      "name": "Michael",
+      "role": "Lead Developer",
+      "avatarFilename": "michael.png"
+    },
+    "time": "today 10:15",
+    "content": "I accidentally committed a 'console.log' to the main branch again. Sorry team, I'll buy coffee for everyone as penance ☕️",
+    "threadMessages": 0
+  },
+  {
+    "id": 10,
+    "channelId": 2,
+    "user": {
+      "name": "David",
+      "role": "Backend Developer",
+      "avatarFilename": "david.png"
+    },
+    "time": "today 13:45",
+    "content": "Just pushed the latest updates to the staging environment. Let me know if anything breaks! 🚀",
+    "threadMessages": 0
+  },
+  {
+    "id": 11,
+    "user": {
+      "name": "Alex",
+      "role": "Marketing Manager",
+      "avatarFilename": "alex.png"
+    },
+    "time": "yesterday 16:10",
+    "content": "Hey team, I've scheduled our next social media campaign to go live on Monday. Let's make sure all the content is ready!",
+    "threadMessages": 0
+  },
+  {
+    "id": 12,
+    "user": {
+      "name": "Rachel",
+      "role": "UX/UI Designer",
+      "avatarFilename": "rachel.png"
+    },
+    "time": "today 11:30",
+    "content": "I've just sent over the mockups for the new landing page to Alex. Let me know if there are any revisions needed!",
+    "threadMessages": 0
+  }
+]
