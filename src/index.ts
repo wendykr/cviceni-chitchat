@@ -2,11 +2,14 @@ import './styles.css';
 import { Channel, Message, Thread } from './data-model.js';
 
 const urlParams = new URLSearchParams(window.location.search);
-const channelId = urlParams.get('channel');
+let channelId = urlParams.get('channel');
 const threadId = urlParams.get('thread');
 
+channelId = !channelId ? '0' : channelId;
+
 const response = await fetch('http://localhost:4000/api/channels');
-const data = await response.json();
+const jsonChannel = await response.json();
+const dataChannel = jsonChannel.result as Channel[];
 
 const renderChannel = (channels: Channel[]): void => {
   const channelsAside: HTMLElement | null = document.querySelector('.channels');
@@ -34,10 +37,12 @@ const renderChannel = (channels: Channel[]): void => {
   })
 };
 
-renderChannel(data.result);
+renderChannel(dataChannel);
 
 const responseMessage = await fetch(`http://localhost:4000/api/messages?filter=channelId:eq:${channelId}`);
-const dataMessage = await responseMessage.json();
+const jsonMessage = await responseMessage.json();
+const dataMessage = jsonMessage.result as Message[];
+
 
 const renderMessage = (messages: Message[]): void => {
   const messagesMain: HTMLElement | null = document.querySelector('.messages');
@@ -89,10 +94,11 @@ const renderMessage = (messages: Message[]): void => {
   })
 };
 
-renderMessage(dataMessage.result);
+renderMessage(dataMessage);
 
 const responseThread = await fetch(`http://localhost:4000/api/thread-messages?filter=parentId:eq:${threadId}`);
-const dataThread = await responseThread.json();
+const jsonThread = await responseThread.json();
+const dataThread = jsonThread.result as Thread[];
 
 const renderThread = (threads: Thread[]): void => {
   const threadsAside: HTMLElement | null = document.querySelector('.thread');
@@ -139,4 +145,4 @@ const renderThread = (threads: Thread[]): void => {
   })
 };
 
-renderThread(dataThread.result);
+renderThread(dataThread);
