@@ -7,31 +7,61 @@ let threadId = urlParams.get('thread');
 
 channelId = !channelId ? '0' : channelId;
 
-const fetchData = async () => {
+const fetchDataChannels = async (): Promise<Channel[]> => {
   try {
     const responseChannel = await fetch('http://localhost:4000/api/channels');
     const jsonChannel = await responseChannel.json();
     const dataChannel = jsonChannel.result as Channel[];
-    renderChannels(dataChannel);
+    return dataChannel;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
+};
 
+const channels = await fetchDataChannels();
+
+const fetchDataMessages = async (): Promise<Message[]> => {
+  try {
     const responseMessage = await fetch(`http://localhost:4000/api/messages?filter=channelId:eq:${channelId}`);
     const jsonMessage = await responseMessage.json();
     const dataMessage = jsonMessage.result as Message[];
-    renderMessages(dataMessage);
+    return dataMessage;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
+};
 
+const messages = await fetchDataMessages();
+
+const fetchDataMessage = async (): Promise<Message[]> => {
+  try {
     const responseMainMessage = await fetch(`http://localhost:4000/api/messages?filter=id:eq:${threadId}`);
     const jsonMainMessage = await responseMainMessage.json();
     const dataMainMessage = jsonMainMessage.result as Message[];
-    renderMainMessage(dataMainMessage);
+    return dataMainMessage;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
+};
 
+const message = await fetchDataMessage();
+
+const fetchDataThreads = async (): Promise<Thread[]> => {
+  try {
     const responseThread = await fetch(`http://localhost:4000/api/thread-messages?filter=parentId:eq:${threadId}`);
     const jsonThread = await responseThread.json();
     const dataThread = jsonThread.result as Thread[];
-    renderThreads(dataThread);
+    return dataThread;
   } catch (error) {
     console.error('Error fetching data:', error);
+    return [];
   }
 };
+
+const threads = await fetchDataThreads();
 
 const renderChannels = (channels: Channel[]): void => {
   const channelsAside: HTMLElement | null = document.querySelector('.channels');
@@ -58,6 +88,8 @@ const renderChannels = (channels: Channel[]): void => {
     channelsAside?.appendChild(newItem);
   })
 };
+
+renderChannels(channels);
 
 const renderMessages = (messages: Message[]): void => {
   const messagesMain: HTMLElement | null = document.querySelector('.messages');
@@ -111,6 +143,8 @@ const renderMessages = (messages: Message[]): void => {
   })
 };
 
+renderMessages(messages);
+
 const renderMainMessage = (mainMessage: Message[]): void => {
   const threadsAside: HTMLElement | null = document.querySelector('.thread');
 
@@ -152,6 +186,8 @@ const renderMainMessage = (mainMessage: Message[]): void => {
     threadsAside?.appendChild(newDivElm);
   })
 };
+
+renderMainMessage(message);
 
 const renderThreads = (threads: Thread[]): void => {
   const threadsAside: HTMLElement | null = document.querySelector('.thread');
@@ -198,4 +234,4 @@ const renderThreads = (threads: Thread[]): void => {
   })
 };
 
-fetchData();
+renderThreads(threads);
