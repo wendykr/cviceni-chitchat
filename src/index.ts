@@ -3,19 +3,21 @@ import { Channel, Message, Thread } from './data-model.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 let channelId = urlParams.get('channel');
-const threadId = urlParams.get('thread');
+let threadId = urlParams.get('thread');
+
+channelId = !channelId ? '0' : channelId;
 
 const fetchData = async () => {
   try {
     const responseChannel = await fetch('http://localhost:4000/api/channels');
     const jsonChannel = await responseChannel.json();
     const dataChannel = jsonChannel.result as Channel[];
-    renderChannel(dataChannel);
+    renderChannels(dataChannel);
 
     const responseMessage = await fetch(`http://localhost:4000/api/messages?filter=channelId:eq:${channelId}`);
     const jsonMessage = await responseMessage.json();
     const dataMessage = jsonMessage.result as Message[];
-    renderMessage(dataMessage);
+    renderMessages(dataMessage);
 
     const responseMainMessage = await fetch(`http://localhost:4000/api/messages?filter=id:eq:${threadId}`);
     const jsonMainMessage = await responseMainMessage.json();
@@ -25,16 +27,16 @@ const fetchData = async () => {
     const responseThread = await fetch(`http://localhost:4000/api/thread-messages?filter=parentId:eq:${threadId}`);
     const jsonThread = await responseThread.json();
     const dataThread = jsonThread.result as Thread[];
-    renderThread(dataThread);
+    renderThreads(dataThread);
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 };
 
-const renderChannel = (channels: Channel[]): void => {
+const renderChannels = (channels: Channel[]): void => {
   const channelsAside: HTMLElement | null = document.querySelector('.channels');
 
-  channels.forEach(channel => {
+  channels.forEach((channel, index) => {
 
     const newItem: HTMLAnchorElement = document.createElement('a');
     newItem.href = `?channel=${channel.id}`;
@@ -51,14 +53,16 @@ const renderChannel = (channels: Channel[]): void => {
     newItem.appendChild(channelName);
     newItem.appendChild(channelMeta);
 
+    (index === Number(channelId)) && newItem.classList.add('active');
+
     channelsAside?.appendChild(newItem);
   })
 };
 
-const renderMessage = (messages: Message[]): void => {
+const renderMessages = (messages: Message[]): void => {
   const messagesMain: HTMLElement | null = document.querySelector('.messages');
 
-  messages.forEach(message => {
+  messages.forEach((message, index) => {
 
     const newDivElm: HTMLDivElement = document.createElement('div');
     newDivElm.classList.add('message');
@@ -98,6 +102,10 @@ const renderMessage = (messages: Message[]): void => {
     messageHead.appendChild(messageTime);
     messageContent.appendChild(messageText);
     (message.threadMessages > 0) && messageContent.appendChild(newLink);
+
+    console.log(threadId);
+
+    (threadId !== null && threadId !== 'null') && (index === Number(threadId)) && newDivElm.classList.add('active');
 
     messagesMain?.appendChild(newDivElm);
   })
@@ -145,7 +153,7 @@ const renderMainMessage = (mainMessage: Message[]): void => {
   })
 };
 
-const renderThread = (threads: Thread[]): void => {
+const renderThreads = (threads: Thread[]): void => {
   const threadsAside: HTMLElement | null = document.querySelector('.thread');
   const newThreadElm: HTMLDivElement = document.createElement('div');
   newThreadElm.classList.add('thread-message');

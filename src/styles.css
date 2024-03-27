@@ -45,6 +45,10 @@ body {
   }
 }
 
+.channel.active:hover {
+  background-color: #663047;
+}
+
 .channel:hover {
   background-color: #444;
 }
