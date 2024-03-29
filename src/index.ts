@@ -192,7 +192,7 @@ renderMainMessage(message);
 const renderThreads = (threads: Thread[]): void => {
   const threadsAside: HTMLElement | null = document.querySelector('.thread');
   const newThreadElm: HTMLDivElement = document.createElement('div');
-  newThreadElm.classList.add('thread-message');
+  newThreadElm.classList.add('thread-messages');
 
   threads.forEach((thread) => {
     const newDivElm: HTMLDivElement = document.createElement('div');
